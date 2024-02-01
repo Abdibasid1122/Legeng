@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Records</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+body {
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	width: 50%;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+	text-align: right;
+}
+
+select, input[type="number"] {
+	width: 50px;
+}
+
+button {
+	margin-left: 150px;
+}
+
+#result {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+footer {
+	text-align: center;
+	margin-top: 50px;
+	font-size: 12px;
+	color: #999;
+}
+</style>
+<script>
+    function calculate() {
+	var name = document.getElementById("name").value;
+	var shirts = document.getElementById("shirts").value;
+	var kanzu = document.getElementById("kanzu").value;
+	var kaunda = document.getElementById("kaunda").value;
+    var trouser = document.getElementById("trouser").value;
+    var suit = document.getElementById("suit").value;
+	var total = (shirts * 300) + (kanzu * 500) + (kaunda * 700) + (trouser * 300) + (suit * 900);
+	document.getElementById("result").innerHTML = name + "'s Total Money: " + total;
+}
+</script>
+<body>
+	<h1>Jamila Company</h1>
+	<u><h2>Employe Records</h2></u>
+	<form>
+		<label for="name">Name:</label>
+		<select id="name" name="name">
+			<option value="ABDIFATAH">ABDIFATAH</option>
+			<option value="BANGAL">BANGAL</option>
+			<option value="SALMAN">SALMAN</option>
+			<option value="MOHAMED">MOHAMED</option>
+            <option value="SHEDRICK">SHEDRICK</option>
+            <option value="PETER">PETER</option>
+		</select><br><br>
+		<label for="shirts">Number of Shirts:</label>
+		<input type="number" id="shirts" name="shirts"><br><br>
+		<label for="kanzu">Number of Kanzus:</label>
+		<input type="number" id="kanzu" name="kanzu"><br><br>
+		<label for="kaunda">Number of Kaundas:</label>
+		<input type="number" id="kaunda" name="kaunda"><br><br>
+        <label for="trouser">Number of Trousers:</label>
+		<input type="number" id="trouser" name="trouser"><br><br>
+        <label for="suit">Number of Suits:</label>
+		<input type="number" id="suit" name="suit"><br><br>
+		<button type="button" onclick="calculate()">Calculate</button>
+	</form>
+	<div id="result"></div>
+	<script src="script.js"></script>
+    <footer>Copyright &copy; 2023 Legend Tailor Co. All rights reserved.</footer>
+</body>
+</html>
